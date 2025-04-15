@@ -31,7 +31,7 @@ export const AddPost = () => {
       const token = window.localStorage.getItem("token");
       console.log("Token:", token);
       const response = await axios.post(
-        "http://localhost:4444/upload",
+        `${process.env.REACT_APP_API_URL}/upload`,
         formData,
         {
           headers: {
@@ -163,7 +163,7 @@ export const AddPost = () => {
           </Button>
           <img
             className={styles.image}
-            src={`http://localhost:4444${imageUrl}`}
+            src={`${process.env.REACT_APP_API_URL}${imageUrl}`}
             alt="Uploaded"
           />
         </>
